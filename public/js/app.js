@@ -30,14 +30,11 @@
                 messageTwo.textContent='loading result....' 
                 messageTwo.textContent='' 
                  if (data.error) {
-                     const type=JSON.stringify(data.error)
-                    
-                     messageTwo.textContent=type;
+                    //  const type=JSON.stringify()
+                     messageTwo.textContent=data.error.error;
                  } else {
                      messageOne.textContent=data.location;
-                     const weather=JSON.stringify(data.forecast)
-                     messageTwo.textContent= weather;
-       
+                     messageTwo.textContent= `The temprature is ${data.forecast.temperature} but it feels like ${data.forecast.feelslike} taken at time   ${data.forecast.observation_time}`;
                  }
              })
          })

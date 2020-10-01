@@ -13,7 +13,7 @@ const gecodes=(address,callback)=>{
             callback(body.message,undefined)
         }else if(body.features.length===0){
             callback({
-                error:'no such place '+body.query[0]+'found'
+                error:'No Such Place '+ body.query[0] +' Found'
             },undefined)
         }else{
             callback(undefined,{
